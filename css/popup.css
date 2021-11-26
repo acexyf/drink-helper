@@ -1,0 +1,66 @@
+.bgs {
+  width: 200px;
+}
+#settings {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  opacity: 1;
+  background-image: url(icons/settings.png);
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  transition: opacity 0.1s ease-in;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  z-index: 9;
+}
+
+.select{
+  padding: 20px 10px;
+}
+.interval-text{
+  padding: 10px 0 10px;
+}
+
+.switch {
+  background-color: #63a1ff;
+  padding: 40px 0;
+}
+.switch-text {
+  color: #fff;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 0 0;
+}
+
+.switch .switch-main {
+  width: 130px;
+  height: 60px;
+  background-color: #fff;
+  -webkit-border-radius: 30px;
+  border-radius: 30px;
+  padding: 5px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  cursor: pointer;
+}
+.switch .switch-main span {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 4px solid #e7e5db;
+  background-color: #f94d4b;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 0 4px 6px rgba(51, 51, 51, 0.2);
+  box-shadow: 0 4px 6px rgba(51, 51, 51, 0.2);
+}
+.switch .active span {
+  margin-left: 70px;
+  background-color: #0066ff;
+}
