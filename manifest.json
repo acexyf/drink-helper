@@ -6,7 +6,12 @@
   "permissions": ["storage", "declarativeContent", "alarms", "notifications"],
   "browser_action": {
     "default_popup": "popup.html",
-    "default_icon": "popup.png"
+    "default_icon": {
+      "16": "icons/png16.png",
+      "24": "icons/png24.png",
+      "32": "icons/png32.png",
+      "48": "icons/png48.png"
+    }
   },
   "background": {
     "scripts": ["background.js"],
