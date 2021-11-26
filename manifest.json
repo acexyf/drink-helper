@@ -13,6 +13,14 @@
       "48": "icons/png48.png"
     }
   },
+  "icons": {
+    "16": "icons/png16.png",
+    "24": "icons/png24.png",
+    "32": "icons/png32.png",
+    "48": "icons/png48.png",
+    "64": "icons/png64.png",
+    "128": "icons/png128.png"
+  },
   "background": {
     "scripts": ["background.js"],
     "persistent": false
