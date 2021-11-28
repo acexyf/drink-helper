@@ -487,7 +487,7 @@ chrome.runtime.onInstalled.addListener(function () {
   function showNotification() {
     chrome.notifications.create(null, {
       type: "basic",
-      iconUrl: Math.random() > 0.5 ? "drink1.jpg" : "drink2.jpg",
+      iconUrl: Math.random() > 0.5 ? "./drink1.jpg" : "./drink2.jpg",
       title: "提醒喝水小助手",
       message: "看到此消息的人可以和我一起来喝一杯水",
     });
@@ -530,7 +530,6 @@ chrome.runtime.onInstalled.addListener(function () {
     );
   });
   setClock();
-  console.log(dayjs());
   chrome.storage.onChanged.addListener(function (changes, namespace) {
     setClock();
   });
