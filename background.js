@@ -544,6 +544,9 @@ chrome.runtime.onInstalled.addListener(function () {
   });
   setClock();
   chrome.storage.onChanged.addListener(function (changes, namespace) {
+    chrome.storage.sync.set({
+      lastLog: +new Date(),
+    });
     setClock();
   });
 });
