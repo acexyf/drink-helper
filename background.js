@@ -13,6 +13,10 @@ function createCommonjsModule(fn, module) {
   return (module = { exports: {} }), fn(module, module.exports), module.exports;
 }
 
+function getMod(num1, num2) {
+  return [Math.floor(num1 / num2), num1 % num2];
+}
+
 var isBetween = createCommonjsModule(function (module, exports) {
   !(function (e, i) {
     module.exports = i();
@@ -484,13 +488,17 @@ chrome.runtime.onInstalled.addListener(function () {
     );
   }
 
-  function showNotification() {
+  function showNotification(minutes = 30) {
+    const [hour, left] = getMod(minutes, 60);
+
     chrome.notifications.create(null, {
-      type: "basic",
-      iconUrl: Math.random() > 0.5 ? "./drink1.jpg" : "./drink2.jpg",
+      type: "image",
+      iconUrl: "./drink.png",
+      imageUrl: Math.random() > 0.5 ? "./drink1.png" : "./drink2.png",
       title: "提醒喝水小助手",
-      message:
-        "看到此消息的人可以和我一起来喝一杯水。及时排便洗手，记得关门。一小时后的我继续提醒大家喝水。和我一起成为一天八杯水的人吧！",
+      message: `看到此消息的人可以和我一起来喝一杯水。及时排便洗手，记得关门。${
+        hour > 0 ? `${hour}小时${left}分钟` : `${minutes}分钟`
+      }后的我继续提醒大家喝水。和我一起成为一天八杯水的人吧！`,
     });
   }
   function isNowBetween(startTime, endTime) {
@@ -510,7 +518,7 @@ chrome.runtime.onInstalled.addListener(function () {
         // 时间到了，判断当前时间是否需要提示
         if (isNowBetween(startTime, endTime)) {
           // 需要提示
-          showNotification();
+          showNotification(interval);
           chrome.alarms.create({ delayInMinutes: interval });
         } else {
           // 计算下一个提示时间需要多久
