@@ -487,8 +487,8 @@ chrome.runtime.onInstalled.addListener(function () {
   function showNotification() {
     chrome.notifications.create(null, {
       type: "basic",
-      iconUrl: "drink.png",
-      title: "喝水小助手",
+      iconUrl: Math.random() > 0.5 ? "drink1.jpg" : "drink2.jpg",
+      title: "提醒喝水小助手",
       message: "看到此消息的人可以和我一起来喝一杯水",
     });
   }
