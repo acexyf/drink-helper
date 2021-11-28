@@ -489,7 +489,8 @@ chrome.runtime.onInstalled.addListener(function () {
       type: "basic",
       iconUrl: Math.random() > 0.5 ? "./drink1.jpg" : "./drink2.jpg",
       title: "提醒喝水小助手",
-      message: "看到此消息的人可以和我一起来喝一杯水",
+      message:
+        "看到此消息的人可以和我一起来喝一杯水。及时排便洗手，记得关门。一小时后的我继续提醒大家喝水。和我一起成为一天八杯水的人吧！",
     });
   }
   function isNowBetween(startTime, endTime) {
