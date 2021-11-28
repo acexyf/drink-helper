@@ -4,7 +4,7 @@ $(function () {
   chrome.storage.sync.get(
     ["interval", "startTime", "endTime", "open"],
     function (data) {
-      const { interval, startTime, endTime, open } = data;
+      const { interval, startTime, endTime, open, lastLog } = data;
 
       if (open) {
         $(".switch-text").text("关闭喝水提示");
@@ -15,7 +15,6 @@ $(function () {
       }
       $("#start-time").val(startTime);
       $("#end-time").val(endTime);
-
 
       ZUI.silder({
         elem: ".interval",

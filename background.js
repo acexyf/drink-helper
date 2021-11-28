@@ -464,6 +464,7 @@ dayjs.extend(isBetween);
 chrome.runtime.onInstalled.addListener(function () {
   chrome.storage.sync.set({
     open: true,
+    lastLog: +new Date(),
     interval: 30,
     startTime: "09:00",
     endTime: "17:00",
@@ -511,6 +512,9 @@ chrome.runtime.onInstalled.addListener(function () {
   }
 
   chrome.alarms.onAlarm.addListener(function () {
+    chrome.storage.sync.set({
+      lastLog: +new Date(),
+    });
     chrome.storage.sync.get(
       ["interval", "startTime", "endTime"],
       function (data) {
